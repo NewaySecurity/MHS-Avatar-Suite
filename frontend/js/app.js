@@ -31,17 +31,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const textInput = document.getElementById('textInput');
     const chatMessages = document.getElementById('chatMessages');
 
-    sendBtn.addEventListener('click', () => {
+    sendBtn.addEventListener('click', async () => {
         const messageContent = textInput.value.trim();
         if (messageContent) {
             appendMessage('user', messageContent);
             textInput.value = '';
-            // TODO: Send messageContent to backend and get avatar response
+            
+            // Send message to backend and get avatar response
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: messageContent })
+                });
+                
+                const data = await response.json();
+                if (data.success) {
+                    appendMessage('avatar', data.data.response);
+                } else {
+                    appendMessage('system', 'Sorry, I encountered an error. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                appendMessage('system', 'Connection error. Please check your network and try again.');
+            }
         }
     });
 
     clearBtn.addEventListener('click', () => {
         textInput.value = '';
+    });
+
+    // Add Enter key support
+    textInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendBtn.click();
+        }
     });
 
     function appendMessage(sender, message) {

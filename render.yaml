@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: mhs-avatar-suite
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    disk:
+      name: mhs-avatar-disk
+      mountPath: /tmp
+      sizeGB: 1
+    healthCheckPath: /api/status
+    scaling:
+      minInstances: 1
+      maxInstances: 3
+      targetCPUPercent: 70
+      targetMemoryPercent: 70

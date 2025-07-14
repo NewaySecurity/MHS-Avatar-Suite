@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Neway Security Training Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <h1 class="logo">Neway Academy</h1>
+                <span class="tagline">Student Dashboard</span>
+            </div>
+            <div class="nav-user">
+                <span class="user-name">Welcome, <span id="userName">Student</span></span>
+                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-menu">
+                <a href="#overview" class="menu-item active" data-section="overview">
+                    <span class="menu-icon">📊</span>
+                    Overview
+                </a>
+                <a href="#courses" class="menu-item" data-section="courses">
+                    <span class="menu-icon">📚</span>
+                    My Courses
+                </a>
+                <a href="#lessons" class="menu-item" data-section="lessons">
+                    <span class="menu-icon">🎬</span>
+                    AI Avatar Lessons
+                </a>
+                <a href="#progress" class="menu-item" data-section="progress">
+                    <span class="menu-icon">📈</span>
+                    Progress
+                </a>
+                <a href="#certificates" class="menu-item" data-section="certificates">
+                    <span class="menu-icon">🏅</span>
+                    Certificates
+                </a>
+                <a href="#support" class="menu-item" data-section="support">
+                    <span class="menu-icon">💬</span>
+                    Support
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview-section" class="dashboard-section active">
+                <div class="section-header">
+                    <h2>Dashboard Overview</h2>
+                    <p>Welcome back! Here's your learning progress at a glance.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-content">
+                            <h3>2</h3>
+                            <p>Enrolled Courses</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <h3>75%</h3>
+                            <p>Progress</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <h3>18</h3>
+                            <p>Lessons Completed</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-content">
+                            <h3>24h</h3>
+                            <p>Study Time</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="continueLesson()">Continue Learning</button>
+                        <button class="btn btn-secondary" onclick="viewProgress()">View Progress</button>
+                        <button class="btn btn-outline" onclick="contactSupport()">Get Support</button>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">🎬</div>
+                            <div class="activity-content">
+                                <h4>Completed: Grade C Security Protocols</h4>
+                                <p>2 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">✅</div>
+                            <div class="activity-content">
+                                <h4>Passed: Module 5 Assessment</h4>
+                                <p>1 day ago</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">📚</div>
+                            <div class="activity-content">
+                                <h4>Started: Emergency Response Training</h4>
+                                <p>3 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section id="courses-section" class="dashboard-section">
+                <div class="section-header">
+                    <h2>My Courses</h2>
+                    <p>Manage your enrolled courses and track your progress.</p>
+                </div>
+
+                <div class="course-list">
+                    <div class="course-item">
+                        <div class="course-info">
+                            <h3>Grade E, D, C & PSIRA Training</h3>
+                            <p>Foundation security training with PSIRA registration</p>
+                            <div class="course-meta">
+                                <span>Duration: 3 Weeks</span>
+                                <span>Started: Jan 15, 2025</span>
+                            </div>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <span>75% Complete</span>
+                        </div>
+                        <div class="course-actions">
+                            <button class="btn btn-primary">Continue</button>
+                            <button class="btn btn-secondary">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="course-item">
+                        <div class="course-info">
+                            <h3>Leadership Development</h3>
+                            <p>Advanced leadership skills for security professionals</p>
+                            <div class="course-meta">
+                                <span>Duration: 1 Week</span>
+                                <span>Started: Jan 20, 2025</span>
+                            </div>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 30%"></div>
+                            </div>
+                            <span>30% Complete</span>
+                        </div>
+                        <div class="course-actions">
+                            <button class="btn btn-primary">Continue</button>
+                            <button class="btn btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Avatar Lessons Section -->
+            <section id="lessons-section" class="dashboard-section">
+                <div class="section-header">
+                    <h2>AI Avatar Lessons</h2>
+                    <p>Interactive lessons with AI-powered instructors.</p>
+                </div>
+
+                <div class="lesson-grid">
+                    <div class="lesson-card completed">
+                        <div class="lesson-thumbnail">
+                            <div class="avatar-placeholder">🤖</div>
+                        </div>
+                        <div class="lesson-content">
+                            <h3>Introduction to Security</h3>
+                            <p>Meet your AI instructor and learn the basics</p>
+                            <div class="lesson-meta">
+                                <span>Duration: 15 min</span>
+                                <span class="status completed">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lesson-card current">
+                        <div class="lesson-thumbnail">
+                            <div class="avatar-placeholder">🤖</div>
+                        </div>
+                        <div class="lesson-content">
+                            <h3>Risk Assessment Techniques</h3>
+                            <p>Learn to identify and evaluate security risks</p>
+                            <div class="lesson-meta">
+                                <span>Duration: 25 min</span>
+                                <span class="status current">In Progress</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Continue</button>
+                    </div>
+
+                    <div class="lesson-card">
+                        <div class="lesson-thumbnail">
+                            <div class="avatar-placeholder">🤖</div>
+                        </div>
+                        <div class="lesson-content">
+                            <h3>Emergency Response Protocols</h3>
+                            <p>Handle emergency situations effectively</p>
+                            <div class="lesson-meta">
+                                <span>Duration: 30 min</span>
+                                <span class="status locked">Locked</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="avatar-interaction">
+                    <h3>Practice with AI Avatar</h3>
+                    <div class="avatar-chat">
+                        <div class="avatar-display">
+                            <div class="avatar-icon">🤖</div>
+                            <p>Ready to practice? Ask me anything about security protocols!</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="startAvatarChat()">Start Practice Session</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress-section" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Learning Progress</h2>
+                    <p>Track your achievements and performance.</p>
+                </div>
+
+                <div class="progress-overview">
+                    <div class="progress-card">
+                        <h3>Overall Progress</h3>
+                        <div class="circular-progress">
+                            <div class="progress-circle">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                        <p>You're doing great! Keep up the excellent work.</p>
+                    </div>
+
+                    <div class="progress-breakdown">
+                        <h3>Module Progress</h3>
+                        <div class="module-progress">
+                            <div class="module-item">
+                                <span>Grade E Training</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%"></div>
+                                </div>
+                                <span>100%</span>
+                            </div>
+                            <div class="module-item">
+                                <span>Grade D Training</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                                <span>85%</span>
+                            </div>
+                            <div class="module-item">
+                                <span>Grade C Training</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                                <span>60%</span>
+                            </div>
+                            <div class="module-item">
+                                <span>PSIRA Registration</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                                <span>40%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievements">
+                    <h3>Achievements</h3>
+                    <div class="achievement-grid">
+                        <div class="achievement-badge earned">
+                            <div class="badge-icon">🏆</div>
+                            <h4>First Steps</h4>
+                            <p>Completed your first lesson</p>
+                        </div>
+                        <div class="achievement-badge earned">
+                            <div class="badge-icon">📚</div>
+                            <h4>Knowledge Seeker</h4>
+                            <p>Completed 10 lessons</p>
+                        </div>
+                        <div class="achievement-badge">
+                            <div class="badge-icon">🎯</div>
+                            <h4>Perfectionist</h4>
+                            <p>Score 100% on 5 assessments</p>
+                        </div>
+                        <div class="achievement-badge">
+                            <div class="badge-icon">⚡</div>
+                            <h4>Speed Learner</h4>
+                            <p>Complete course in record time</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certificates Section -->
+            <section id="certificates-section" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Certificates</h2>
+                    <p>View and download your earned certificates.</p>
+                </div>
+
+                <div class="certificate-list">
+                    <div class="certificate-item">
+                        <div class="certificate-preview">
+                            <div class="certificate-icon">📜</div>
+                        </div>
+                        <div class="certificate-info">
+                            <h3>Grade E Security Officer Certificate</h3>
+                            <p>Issued by Neway Security Training Academy</p>
+                            <div class="certificate-meta">
+                                <span>Issued: January 20, 2025</span>
+                                <span>Valid Until: January 20, 2027</span>
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <button class="btn btn-primary">Download</button>
+                            <button class="btn btn-secondary">View</button>
+                        </div>
+                    </div>
+
+                    <div class="certificate-item pending">
+                        <div class="certificate-preview">
+                            <div class="certificate-icon">⏳</div>
+                        </div>
+                        <div class="certificate-info">
+                            <h3>Grade D Security Officer Certificate</h3>
+                            <p>Complete remaining modules to earn this certificate</p>
+                            <div class="certificate-meta">
+                                <span>Progress: 85%</span>
+                                <span>Estimated: February 1, 2025</span>
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <button class="btn btn-outline">Continue Course</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Support Section -->
+            <section id="support-section" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Student Support</h2>
+                    <p>Get help when you need it.</p>
+                </div>
+
+                <div class="support-options">
+                    <div class="support-card">
+                        <div class="support-icon">💬</div>
+                        <h3>Live Chat</h3>
+                        <p>Chat with our support team in real-time</p>
+                        <button class="btn btn-primary">Start Chat</button>
+                    </div>
+
+                    <div class="support-card">
+                        <div class="support-icon">📞</div>
+                        <h3>Phone Support</h3>
+                        <p>Call us at 079 955 0700 during business hours</p>
+                        <button class="btn btn-secondary">Call Now</button>
+                    </div>
+
+                    <div class="support-card">
+                        <div class="support-icon">📧</div>
+                        <h3>Email Support</h3>
+                        <p>Send us an email and we'll respond within 24 hours</p>
+                        <button class="btn btn-outline">Send Email</button>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <h4>How do I access my course materials?</h4>
+                            <p>Click on "My Courses" in the sidebar and select the course you want to access.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Can I download my certificates?</h4>
+                            <p>Yes! Visit the Certificates section and click "Download" next to any earned certificate.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What if I'm having technical issues?</h4>
+                            <p>Contact our support team through live chat or phone for immediate assistance.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Dashboard functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            const isLoggedIn = localStorage.getItem('studentLoggedIn');
+            const username = localStorage.getItem('studentUsername');
+            
+            if (!isLoggedIn) {
+                window.location.href = 'student-portal.html';
+                return;
+            }
+            
+            // Set username
+            document.getElementById('userName').textContent = username || 'Student';
+            
+            // Sidebar navigation
+            const menuItems = document.querySelectorAll('.menu-item');
+            const sections = document.querySelectorAll('.dashboard-section');
+            
+            menuItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all items
+                    menuItems.forEach(mi => mi.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const sectionId = this.dataset.section + '-section';
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+        });
+
+        // Dashboard functions
+        function logout() {
+            localStorage.removeItem('studentLoggedIn');
+            localStorage.removeItem('studentUsername');
+            window.location.href = 'student-portal.html';
+        }
+
+        function continueLesson() {
+            document.querySelector('[data-section="lessons"]').click();
+        }
+
+        function viewProgress() {
+            document.querySelector('[data-section="progress"]').click();
+        }
+
+        function contactSupport() {
+            document.querySelector('[data-section="support"]').click();
+        }
+
+        function startAvatarChat() {
+            // Redirect to avatar interface
+            window.location.href = 'frontend/index.html';
+        }
+    </script>
+</body>
+</html>

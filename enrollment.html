@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment - Neway Security Training Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <h1 class="logo">Neway Academy</h1>
+                <span class="tagline">Professional Security Training</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="student-portal.html" class="cta-login">Student Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Course Enrollment</h1>
+            <p>Complete your enrollment to start your security training journey</p>
+        </div>
+    </section>
+
+    <!-- Enrollment Form -->
+    <section class="enrollment-section">
+        <div class="container">
+            <div class="enrollment-container">
+                <!-- Course Selection -->
+                <div class="course-selection" id="courseSelection">
+                    <h2>Select Your Course Package</h2>
+                    <div class="course-options">
+                        <div class="course-option" data-package="EDC" data-price="2000">
+                            <h3>E, D, C ONLY</h3>
+                            <div class="price">R2,000.00</div>
+                            <div class="duration">3 Weeks</div>
+                            <p>Foundation-level security training</p>
+                        </div>
+                        
+                        <div class="course-option featured" data-package="EDCP" data-price="2450">
+                            <div class="badge">Most Popular</div>
+                            <h3>E, D, C & PSIRA</h3>
+                            <div class="price">R2,450.00</div>
+                            <div class="duration">3 Weeks</div>
+                            <p>Complete training with PSIRA registration</p>
+                        </div>
+                        
+                        <div class="course-option" data-package="FULL" data-price="5000">
+                            <h3>Complete Package</h3>
+                            <div class="price">R5,000.00</div>
+                            <div class="duration">5 Weeks</div>
+                            <p>All grades with advanced training</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Information Form -->
+                <div class="enrollment-form-container">
+                    <form class="enrollment-form" id="enrollmentForm">
+                        <div class="form-section">
+                            <h3>Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="idNumber">ID Number *</label>
+                                    <input type="text" id="idNumber" name="idNumber" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dateOfBirth">Date of Birth *</label>
+                                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Address Information</h3>
+                            <div class="form-group">
+                                <label for="address">Street Address *</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="province">Province *</label>
+                                    <select id="province" name="province" required>
+                                        <option value="">Select Province</option>
+                                        <option value="Eastern Cape">Eastern Cape</option>
+                                        <option value="Free State">Free State</option>
+                                        <option value="Gauteng">Gauteng</option>
+                                        <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                                        <option value="Limpopo">Limpopo</option>
+                                        <option value="Mpumalanga">Mpumalanga</option>
+                                        <option value="Northern Cape">Northern Cape</option>
+                                        <option value="North West">North West</option>
+                                        <option value="Western Cape">Western Cape</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="postalCode">Postal Code *</label>
+                                    <input type="text" id="postalCode" name="postalCode" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Emergency Contact</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="emergencyName">Emergency Contact Name *</label>
+                                    <input type="text" id="emergencyName" name="emergencyName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="emergencyPhone">Emergency Contact Phone *</label>
+                                    <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="emergencyRelationship">Relationship *</label>
+                                <select id="emergencyRelationship" name="emergencyRelationship" required>
+                                    <option value="">Select Relationship</option>
+                                    <option value="Parent">Parent</option>
+                                    <option value="Spouse">Spouse</option>
+                                    <option value="Sibling">Sibling</option>
+                                    <option value="Child">Child</option>
+                                    <option value="Friend">Friend</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Course Selection & Payment</h3>
+                            <div class="selected-course">
+                                <div class="course-summary">
+                                    <h4 id="selectedCourse">Please select a course package above</h4>
+                                    <div class="course-details">
+                                        <span id="courseDuration"></span>
+                                        <span id="coursePrice"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="paymentMethod">Payment Method *</label>
+                                <select id="paymentMethod" name="paymentMethod" required>
+                                    <option value="">Select Payment Method</option>
+                                    <option value="bank-transfer">Bank Transfer</option>
+                                    <option value="cash-deposit">Cash Deposit</option>
+                                    <option value="installments">Installment Plan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Terms & Conditions</h3>
+                            <div class="terms-content">
+                                <p>By enrolling in this course, you agree to:</p>
+                                <ul>
+                                    <li>Complete all required training modules and assessments</li>
+                                    <li>Attend all scheduled sessions and meet participation requirements</li>
+                                    <li>Maintain professional conduct throughout the training</li>
+                                    <li>Provide accurate information in all course materials</li>
+                                    <li>Comply with PSIRA regulations and industry standards</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the terms and conditions *</label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <label for="privacy">I consent to the processing of my personal information *</label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="marketing" name="marketing">
+                                <label for="marketing">I would like to receive updates about new courses and opportunities</label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Complete Enrollment</button>
+                            <button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>📞 079 955 0700 / 072 555 6444</p>
+                    <p>📧 info@newaysecurity.co.za</p>
+                    <p>🌐 www.newaysecurity.co.za</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Location</h3>
+                    <p>📍 Stand No. 10111, Matsikitsane</p>
+                    <p>R40 Main Road, Acornhoek 1360</p>
+                    <p>Mpumalanga, South Africa</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Management</h3>
+                    <p>👤 Peace Tibane - Managing Director</p>
+                    <p>🎯 Max Seya - Strategic Leadership</p>
+                    <p>🏢 Black-owned PSIRA registered company</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Neway Security Services. All rights reserved. | PSIRA Registered Training Provider</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Course selection handling
+        const courseOptions = document.querySelectorAll('.course-option');
+        const selectedCourse = document.getElementById('selectedCourse');
+        const courseDuration = document.getElementById('courseDuration');
+        const coursePrice = document.getElementById('coursePrice');
+        let selectedPackage = null;
+
+        // Check URL parameters for pre-selected course
+        const urlParams = new URLSearchParams(window.location.search);
+        const packageParam = urlParams.get('package');
+        
+        if (packageParam) {
+            const courseOption = document.querySelector(`[data-package="${packageParam}"]`);
+            if (courseOption) {
+                selectCourse(courseOption);
+            }
+        }
+
+        courseOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                selectCourse(option);
+            });
+        });
+
+        function selectCourse(option) {
+            // Remove active class from all options
+            courseOptions.forEach(opt => opt.classList.remove('active'));
+            
+            // Add active class to selected option
+            option.classList.add('active');
+            
+            // Update selected course info
+            selectedPackage = option.dataset.package;
+            const price = option.dataset.price;
+            const courseName = option.querySelector('h3').textContent;
+            const duration = option.querySelector('.duration').textContent;
+            
+            selectedCourse.textContent = courseName;
+            courseDuration.textContent = duration;
+            coursePrice.textContent = `R${price}.00`;
+        }
+
+        // Form submission handling
+        document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!selectedPackage) {
+                alert('Please select a course package before submitting.');
+                return;
+            }
+            
+            // Get form data
+            const formData = new FormData(this);
+            formData.append('package', selectedPackage);
+            
+            // In a real application, this would send data to a server
+            alert('Enrollment submitted successfully! You will receive a confirmation email with payment instructions and your student login details.');
+            
+            // Redirect to student portal
+            window.location.href = 'student-portal.html';
+        });
+
+        // Auto-populate course selection based on URL parameter
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const packageParam = urlParams.get('package');
+            
+            if (packageParam) {
+                const courseOption = document.querySelector(`[data-package="${packageParam}"]`);
+                if (courseOption) {
+                    courseOption.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

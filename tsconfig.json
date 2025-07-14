@@ -1,0 +1,1 @@
+{"extends": "@tsconfig/recommended/tsconfig.json","include": ["frontend/js/**/*"],"compilerOptions": {"outDir": "dist","allowSyntheticDefaultImports": true}}

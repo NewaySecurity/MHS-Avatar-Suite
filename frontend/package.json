@@ -1,0 +1,23 @@
+{
+  "name": "mhs-avatar-suite-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for MHS Avatar Suite",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "build": "webpack --mode=production",
+    "dev": "webpack --mode=development --watch"
+  },
+  "dependencies": {
+    "three": "^0.158.0",
+    "gsap": "^3.12.2",
+    "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3"
+  }
+}

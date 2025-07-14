@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Neway Security Training Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
+        }
+        
+        .login-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #FFD700;
+        }
+        
+        .login-form h2 {
+            text-align: center;
+            color: #FFD700;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+        }
+        
+        .login-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1a1a1a;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .login-help {
+            text-align: center;
+            margin-top: 1rem;
+            color: #ccc;
+        }
+        
+        .login-help a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+        
+        .login-help a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <div class="login-container">
+        <form class="login-form" id="loginForm">
+            <h2>Student Login</h2>
+            
+            <div class="form-group">
+                <label for="username">Student ID:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Login</button>
+            
+            <div class="login-help">
+                <p>Need help? <a href="#contact">Contact Support</a></p>
+                <p>New student? <a href="index.html#courses">Enroll in a Course</a></p>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation
+            if (username && password) {
+                // In a real application, this would be authenticated server-side
+                localStorage.setItem('studentLoggedIn', 'true');
+                localStorage.setItem('studentUsername', username);
+                
+                // Redirect to student dashboard
+                window.location.href = 'student-dashboard.html';
+            } else {
+                alert('Please enter both Student ID and Password');
+            }
+        });
+    </script>
+</body>
+</html>
